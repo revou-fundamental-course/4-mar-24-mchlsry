@@ -32,7 +32,7 @@ form.addEventListener('submit', function (e) {
         text = "Kekurangan berat badan";
     } else {
         tipe = "error"; // error msg
-        text = "Tidak sesuai";
+        text = "Tidak Sesuai";
     }
     
     // Display
