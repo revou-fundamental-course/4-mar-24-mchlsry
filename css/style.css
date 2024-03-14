@@ -13,7 +13,6 @@ header>h1 {
 
 /* Form & Result Display */
 .container-item {
-    /* border: 1px solid; */
     width: 100%;
     padding: 24px;
 }
@@ -43,17 +42,20 @@ header>h1 {
 
 .input-form {
     height: 24px;
+    width: 100%;
     border: 0px;
     border-radius: 5px;
     background-color: white;
+}
+
+.control {
+    margin-top: 10px;
 }
 
 button {
     border: 0px;
     height: 32px;
     width: 120px;
-    /* padding-right: 24px;
-    padding-left: 24px; */
     background-color: white;
     border-radius: 5px;
     margin-top: 5px;
@@ -64,8 +66,13 @@ button:hover {
 }
 
 /* kalo ID pake # bukan . */
-#calculate-button {
+#submit-button {
     background-color: rgb(55, 195, 241);
+    color: white;
+}
+
+#reset-button {
+    background-color: grey; 
     color: white;
 }
 
@@ -82,7 +89,42 @@ button:hover {
     color: white;
 }
 
+/* Hover Button */
+#submit-button:hover, #btn-download:hover, #btn-konsul:hover, #btn-regis:hover {
+    background-color: rgb(91, 206, 245);
+}
+
+#reset-button:hover {
+    background-color: rgb(161, 161, 161); 
+    color: white;
+}
+
+/* Google Play & Apple Store Image */
 .app-btn img {
     width: 202px;
     height: 60px;
+}
+
+/* Responsive Media */
+@media only screen and (max-width: 500px) {
+    .main-container {
+        display: block;
+    }
+    .input-form {
+        height: 24px;
+        width: 100%;
+        border: 0px;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .control {
+        margin-top: 10px;
+    }
+    #btn-konsul, #btn-regis {
+        width: 100%;
+    }
+
+    .container-item h2 {
+        font-weight: bold;
+    }
 }

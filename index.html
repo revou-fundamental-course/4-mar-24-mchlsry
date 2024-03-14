@@ -1,5 +1,9 @@
+
 <!DOCTYPE html>
+<html lang="en"></html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator BMI</title>
     <link rel="icon" type="image/x-icon" href="assets/icon bmi calculator.png">
     <link rel="stylesheet" href="css/style.css">
@@ -20,31 +24,35 @@
                     <p>Yuk, hitung sekarang di kalkulator BMI.</p>
                 </section>
                 <section class="container-form" id="container-form">
-                    <div>
-                        <label for="">Jenis Kelamin</label>
-                        <br>
-                        <input type="radio" name="sex" id="sex-man"><label for="sex-man">Laki-laki</label>
-                        <input type="radio" name="sex" id="sex-woman"><label for="sex-woman">Perempuan</label>
-                    </div>
-                    <div>
-                        <label for="">Berat Badan (kg)</label>
-                        <br>
-                        <input type="number" class="input-form" id="bb">
-                    </div>
-                    <div>
-                        <label for="">Usia (tahun)</label>
-                        <br>
-                        <input type="number" class="input-form" id="thn">
-                    </div>
-                    <div>
-                        <label for="">Tinggi Badan (cm)</label>
-                        <br>
-                        <input type="number" class="input-form" id="tb">
-                    </div>
-                    <div>
-                        <button type="button" id="calculate-button">Hitung BMI</button>
-                        <button type="button" style="background-color: grey; color: white;">Reset</button>
-                    </div>
+                    <form>
+                        <div class="form-control">
+                            <label for="">Jenis Kelamin</label>
+                            <br>
+                            <input type="radio" name="sex" id="sex-man"><label for="sex-man">Laki-laki</label>
+                            <input type="radio" name="sex" id="sex-woman"><label for="sex-woman">Perempuan</label>
+                        </div>
+                        <div class="form-control">
+                            <label for="">Berat Badan (kg)</label>
+                            <br>
+                            <input type="number" class="input-form" id="bb">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Usia (tahun)</label>
+                            <br>
+                            <input type="number" class="input-form" id="thn">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Tinggi Badan (cm)</label>
+                            <br>
+                            <input type="number" class="input-form" id="tb">
+                        </div>
+                        <div class="form-control">
+                            <div class="control">
+                                <button type="submit" id="submit-button">Hitung BMI</button>
+                                <button type="reset" id="reset-button">Reset</button>
+                            </div>
+                        </div>
+                    </form>
                 </section>
                 <section>
                     <header>
@@ -56,29 +64,29 @@
                         3. Mempersiapkan program penurusan berat badan
                     </p>
                     <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
-                    <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup></p>
+                    <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.</p>
                 </section>
             </div>
             <!-- Result Display -->
             <div class="container-item">
                 <h2>Hasil</h2>
                 <section class="container-result">
-                    <h3>Berat Badan Lebih</h4>
-                    <h1 id="BMI"></h1>
-                    <h4>Anda memiliki berat badan berlebih</h4>
+                    <h3 id="kategori" style="font-weight: bold;">Kategori</h4>
+                    <h1 id="result">0</h1>
+                    <h4 id="status"></h4>
                     <button type="button" onclick="window.print()" id="btn-download">Download Hasil BMI</button>
                 </section>
                 <section>
-                    <p>Hasil BMI di antara 23 dan 25.</p>
-                    <p>
-                        Anda berada dalam kategori overweight atau berat badan berlebih.<br>
-                        Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalori makanan yang dikonsumsi dan berolahraga.<br>
-                        Jika BMI Anda berada dalam kategori ini maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal.
-                    </p>
+                    <p id="text-result"></p>
+                    <p id="saran"></p>
                 </section>
                 <section>
-                    <button type="button" id="btn-konsul">Konsultasi Ahli Gizi Via Aplikasi</button>
-                    <button type="button" id="btn-regis">Registrasi Online Ahli Gizi</button>
+                    <a href="https://play.google.com/store/apps/details?id=com.alodokter.android&hl=en_US" target="_blank">
+                        <button type="button" id="btn-konsul">Konsultasi Ahli Gizi Via Aplikasi</button>
+                    </a>
+                    <a href="https://www.alodokter.com/cari-dokter/ahli-gizi?page=1" target="_blank">
+                        <button type="button" id="btn-regis">Registrasi Online Ahli Gizi</button>
+                    </a>
                 </section>
                 <section>
                     <p>
@@ -97,23 +105,23 @@
                             Osteoarthritis
                         </p>
                     </div>
-                    <button type="button" id="btn-konsul">Konsultasi Ahli Gizi Via Aplikasi</button>
-                    <button type="button" id="btn-regis">Registrasi Online Ahli Gizi</button>
+                    <a href="https://play.google.com/store/apps/details?id=com.alodokter.android&hl=en_US" target="_blank">
+                        <button type="button" id="btn-konsul">Konsultasi Ahli Gizi Via Aplikasi</button>
+                    </a>
+                    <a href="https://www.alodokter.com/cari-dokter/ahli-gizi?page=1" target="_blank">
+                        <button type="button" id="btn-regis">Registrasi Online Ahli Gizi</button>
+                    </a>
                 </section>
-                <section style="text-align: center;">
+                <section class="aplikasi" style="text-align: center;">
                     <h3>Download Aplikasi</h3>
                     <div class="app-btn">
-                        <a href=""><img src="assets/google-play.png" alt="google-play"></a>
-                        <a href=""><img src="assets/apple-store.png" alt=""></a>
+                        <a href="https://play.google.com/"><img src="assets/google-play.png" alt="google-play"></a>
+                        <a href="https://apps.apple.com/"><img src="assets/apple-store.png" alt=""></a>
                     </div>
                 </section>
             </div>
         </div>
     </main>
-    <!-- FOOTER -->
-    <!-- <footer>
-
-    </footer> -->
     <script src="js/script.js"></script>
 </body>
 </html>
